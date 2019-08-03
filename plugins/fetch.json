@@ -1,0 +1,18 @@
+{
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "im.youme.cordovaim": {
+    "source": {
+      "type": "local",
+      "path": "C:\\Users\\fish\\Documents\\Project\\YoumeIMCordovaDemo\\node_modules\\im.youme.imcordovaplugin"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}
