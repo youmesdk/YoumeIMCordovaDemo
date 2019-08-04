@@ -41,4 +41,12 @@ exports.leaveChatRoom = function (roomID, success, error) {
     exec(success, error, 'YoumeIMCordovaPlugin', 'leaveChatRoom', [roomID]);
 };
 
+exports.startPlayAudio = function (audioPath, success, error) {
+    exec(success, error, 'YoumeIMCordovaPlugin', 'startPlayAudio', [audioPath]);
+};
+
+exports.stopPlayAudio = function (success, error) {
+    exec(success, error, 'YoumeIMCordovaPlugin', 'stopPlayAudio', []);
+};
+
 });

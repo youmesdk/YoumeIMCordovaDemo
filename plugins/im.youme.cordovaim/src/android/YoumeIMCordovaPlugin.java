@@ -113,7 +113,17 @@ public class YoumeIMCordovaPlugin extends CordovaPlugin implements YIMEventCallb
                 this.leaveChatRoom(roomID, callbackContext);
             }
             break;
-
+            case "startPlayAudio":
+            {
+                String audioPath     = args.getString(0);
+                this.startPlayAudio(audioPath, callbackContext);
+            }
+            break;
+            case "stopPlayAudio":
+            {
+                this.stopPlayAudio();
+            }
+            return false;
             default:
                 return false;
         }
@@ -259,6 +269,24 @@ public class YoumeIMCordovaPlugin extends CordovaPlugin implements YIMEventCallb
                 callbackContext.error(chatRoom.groupId);
             }
         });
+    }
+
+    private void startPlayAudio(String audioPath, CallbackContext callbackContext){
+        YIMClient.getInstance().startPlayAudio(audioPath, new YIMEventCallback.ResultCallback<String>() {
+            @Override
+            public void onSuccess(String s) {
+                callbackContext.success();
+            }
+
+            @Override
+            public void onFailed(int code, String s) {
+                callbackContext.error(code);
+            }
+        });
+    }
+
+    private void stopPlayAudio(){
+        YIMClient.getInstance().stopPlayAudio();
     }
 
     @Override

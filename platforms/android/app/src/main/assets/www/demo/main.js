@@ -7,8 +7,6 @@
  * each engineer has a duty to keep the code elegant
  */
 
-var onDeviceReady = function(){
-
 window.vc = new VConsole({
     onReady: function () {
         var ERROR_NAME = {
@@ -96,7 +94,7 @@ window.vc = new VConsole({
         function addTextItem(msgObj) {
             var html = msgObj.isFromMe ? rightTextTpl : leftTextTpl;
             html = html.replace(/{{name}}/g, msgObj.senderId)
-                .replace('{{text}}', msgObj.message.getText());
+                .replace('{{text}}', msgObj.msgContent);
             addDomToList(html);
         }
 
@@ -104,45 +102,48 @@ window.vc = new VConsole({
         function addVoiceItem(msgObj) {
             var html = msgObj.isFromMe ? rightVoiceTpl : leftVoiceTpl;
             html = html.replace(/{{name}}/g, msgObj.senderId)
-                .replace(/{{time}}/g, Math.round(msgObj.message.getDuration()))
-                .replace(/{{id}}/g, msgObj.serverId)
-                .replace(/{{width}}/g, Math.round(msgObj.message.getDuration() * 10) + 30);
-            addDomToList(html, msgObj.serverId);
+                .replace(/{{time}}/g, msgObj.audioTime)
+                .replace(/{{id}}/g, msgObj.msgId)
+                .replace(/{{width}}/g, Math.round(msgObj.audioTime * 10) + 30);
+            addDomToList(html, msgObj.msgId);
 
             // 绑定语音消息 Dom 的点击事件（播放）
-            E('btn-voice-' + msgObj.serverId).onclick = function () {
-                var msg = msgHash[msgObj.serverId].message;
-                if (msg.isPlaying()) {
-                    msg.stop();
-                } else {
-                    msg.play();
-                }
+            E('btn-voice-' + msgObj.msgId).onclick = function () {
+                var msg = msgHash[msgObj.msgId];
+
+                showPlayUI();
+
+                cordova.plugins.YoumeIMCordovaPlugin.startPlayAudio(msg.audioPath,()=>{
+                    showEndPlayUI();
+                },(code)=>{
+                    console.log('startPlayAudio failed: ' + code);
+                    showEndPlayUI();
+                })
             };
 
-            // 绑定 msg 的播放和停止事件
-            msgObj.message.on('play', function () {
-                E('btn-voice-' + msgObj.serverId).className += ' voice-playing';
-            });
-            msgObj.message.on('end-play', function () {
-                var b = E('btn-voice-' + msgObj.serverId);
+           var showPlayUI = function () {
+                E('btn-voice-' + msgObj.msgId).className += ' voice-playing';
+            };
+            var showEndPlayUI = function () {
+                var b = E('btn-voice-' + msgObj.msgId);
                 b.className = b.className.replace(/\s*voice-playing/g, '');
-            });
+            };
 
             // 把 msgObj 存起来
-            msgHash[msgObj.serverId] = msgObj;
+            msgHash[msgObj.msgId] = msgObj;
         }
 
         // 添加消息（判断消息类型并选择 addTextItem 或 addVoiceItem）
         function addChatItem(msgObj) {
-            switch (msgObj.message.getType()) {
-                case 'text':
+            switch (msgObj.msgType) {
+                case 1:
                     addTextItem(msgObj);
                     break;
-                case 'voice':
+                case 5:
                     addVoiceItem(msgObj);
                     break;
                 default:
-                    addNotice('收到未知消息类型：' + msgObj.message.getType());
+                    addNotice('收到未知消息类型：' + msgObj.msgType);
             }
         }
 
@@ -194,25 +195,55 @@ window.vc = new VConsole({
                 return;
             }
 
-            cordova.plugins.YoumeIMCordovaPlugin.login(userId,"123456", "", code => {
-                alert("login success");
-            }, _errCode => {
-                if(_errCode == 7){
-                    console.log('already login')
-                }else{
-                    alert("login fail：" + _errCode);
+            //register message listener
+            cordova.plugins.YoumeIMCordovaPlugin.registerReconnectCallback(msg=>{
+                var json = JSON.parse(msg)
+                if(json.event === 'onStartReconnect'){
+                    // sdk start reconnect
+                }else if(json.event === 'onRecvReconnectResult'){
+                    if(json.result === 0){ //result 0- reconnect success，1- reconnect fail，try again，2- reconnect failed
+                        console.log('reconnect success');
+                    }
                 }
             })
 
-            // 若填了房间号，则加入房间，会自动等待登录成功再加入房间
-            if (roomId) {
-                cordova.plugins.YoumeIMCordovaPlugin.joinChatRoom(roomId, _roomId => {
-                    console.log("join chat room success, roomId: " + _roomId);
-                }, _roomId => {
-                    alert("join chat room fail, roomid：" + _roomId);
-                })
-                curRoomId = roomId;
-            }
+            cordova.plugins.YoumeIMCordovaPlugin.registerKickOffCallback(msg=>{
+                console.log('be kick off')
+                kickoff();
+            })
+
+            cordova.plugins.YoumeIMCordovaPlugin.registerMsgEventCallback(msg=>{
+                //recv remote message
+                var msgObj = JSON.parse(msg)
+                msgObj.isFromMe = false;//always from remote user
+                addChatItem(msgObj);
+            })
+
+            accountLogining();
+            window.lastLoginUserId = userId;
+            cordova.plugins.YoumeIMCordovaPlugin.login(userId,"123456", "", code => {
+                accountLogin(userId);
+                // if have roomId, join chat room
+                if (roomId) {
+                    joining(roomId);
+                    cordova.plugins.YoumeIMCordovaPlugin.joinChatRoom(roomId, _roomId => {
+                        joinSucess(_roomId);
+                        console.log("join chat room success, roomId: " + _roomId);
+                    }, _roomId => {
+                        console.log("join chat room fail, roomid：" + _roomId);
+                        joinFailed(_roomId);
+                    })
+                    curRoomId = roomId;
+                }
+            }, _errCode => {
+                if(_errCode == 7){
+                    accountLogin(userId);
+                    console.log('already login')
+                }else{
+                    accountLoginFail(_errCode)
+                }
+            })
+
         };
         E('btn-login').onclick = login;
         E('login-user-id').onkeydown = function (e) {
@@ -245,6 +276,7 @@ window.vc = new VConsole({
         // 退出登录
         E('btn-user-logout').onclick = function () {
             cordova.plugins.YoumeIMCordovaPlugin.logout( () => {
+                accountLogout();
                 console.log("logout success");
             }, _code => {
                 alert("logout failed:" + _code);
@@ -266,8 +298,10 @@ window.vc = new VConsole({
         E('btn-room-leave').onclick = function () {
             cordova.plugins.YoumeIMCordovaPlugin.leaveChatRoom(curRoomId, _roomId => {
                 console.log("join chat room success, roomId: " + _roomId);
+                leaveSuccess(_roomId);
             }, _roomId => {
-                alert("join chat room fail, roomid：" + _roomId);
+                console.log("join chat room fail, roomid：" + _roomId);
+                leaveFailed(_roomId);
             })
         };
 
@@ -286,7 +320,6 @@ window.vc = new VConsole({
         // 发送文字消息
         var sendText = function () {
             var text = E('text-msg').value;
-            var msg = new TextMessage(text);
 
             cordova.plugins.YoumeIMCordovaPlugin.sendTextMessage(
                 curRoomId, // receiver id
@@ -295,6 +328,14 @@ window.vc = new VConsole({
                 '',   // custom extra param
                 (msg) => {
                     console.log("send success:" + msg);
+                    var msgObj = {
+                        isFromMe: true,
+                        senderId: window.lastLoginUserId,
+                        msgContent: text,
+                        msgType: 1
+                    }
+                    addChatItem(msgObj);
+
                 }, msg => {
                     addNotice(msg);
                 }
@@ -310,25 +351,28 @@ window.vc = new VConsole({
             }
         };
 
-        // 录音实例
-        var voice;
 
         // 按下录音键（按住说话）
         var holdDown = function (e) {
             isInCancelArea = false;
-            voice = new VoiceMessage();
+
             E('btn-hold-speak').className = 'active';
-            voice.startRecord().then(function () {
-                E('btn-hold-speak').className = 'active speaking';
-                E('btn-hold-speak-text').innerHTML = '松开 完成';
-                E('speak-display-recording').style.display = 'block';
-                E('speak-display-leave-to-cancel').style.display = 'none';
-            }).catch(function (e) {
-                if (e.name !== 'RecordTooShortError') {
-                    // 'RecordTooShortError' 错误将在 finishRecord() 中报错，这里不再重复
-                    addNotice(getErrorMsg(e.name));
+
+            cordova.plugins.YoumeIMCordovaPlugin.startRecordAudioMessage(
+                curRoomId, // receiver id
+                2,  // 1 private chat, 2 room chat
+                'attach my txt', // msg content
+                false,   // custom extra param
+                (msg) => {
+                    console.log("start record success:" + msg);
+                    E('btn-hold-speak').className = 'active speaking';
+                    E('btn-hold-speak-text').innerHTML = '松开 完成';
+                    E('speak-display-recording').style.display = 'block';
+                    E('speak-display-leave-to-cancel').style.display = 'none';
+                }, msg => {
+                    addNotice(msg);
                 }
-            });
+            )
 
             e.preventDefault();
         };
@@ -365,25 +409,33 @@ window.vc = new VConsole({
         var holdUpCancel = function () {
             E('btn-hold-speak').className = '';
             E('btn-hold-speak-text').innerHTML = '按住 说话';
-            // 取消录音
-            voice.cancelRecord();
+            // cancel audio record
+            cordova.plugins.YoumeIMCordovaPlugin.cancelAudioMessage();
         };
 
         // 在完成区域松手
         var holdUpFinish = function () {
             E('btn-hold-speak').className = '';
             E('btn-hold-speak-text').innerHTML = '按住 说话';
-            // 完成录音
-            voice.finishRecord(true);
-
-            // 除了这样写，也可以 voice.finishRecord().then( /* yim.sendToRoom(...) */ ).catch( /* e.name */ );
-            if (voice.isError()) {
-                addNotice(getErrorMsg(voice.getErrorName()));
-            } else {
-                yim.sendToRoom(curRoomId, voice).catch(function (e) {
-                    addNotice(getErrorMsg(e.name));
-                });
-            }
+            // stop record and send audio to room
+            cordova.plugins.YoumeIMCordovaPlugin.stopAndSendAudioMessage(
+                audioMsgInfo =>{
+                    // TODO ready for display
+                    var jsonMsg = JSON.parse(audioMsgInfo);
+                    var msgObj = {
+                        isFromMe: true,
+                        senderId: window.lastLoginUserId,
+                        audioTime: jsonMsg.audioTime ,
+                        msgId: jsonMsg.msgId ,
+                        audioPath: jsonMsg.audioPath ,
+                        msgType: 5
+                    }
+                    addChatItem(msgObj);
+                },
+                errorCode =>{
+                    addNotice('send audio message failed: '+errorCode);
+                }
+            );
         };
 
         var holdUpWhere = function (e) {
@@ -397,45 +449,45 @@ window.vc = new VConsole({
         E('btn-hold-speak').addEventListener('touchend', holdUpWhere);
         E('btn-hold-speak').addEventListener('mouseup', holdUpWhere);
 
-        // 事件绑定：已登录
-        yim.on('account.login', function ()  {
+        // UI绑定：已登录
+        var accountLogin =  function (userid)  {
             E('user-logged').style.display = 'block';
             E('user-no-log').style.display = 'none';
             E('login-form').style.display = 'none';
-            E('dsp-user-name').innerHTML = yim.getMyUserId();
-            addNotice('已登录到 ' + yim.getMyUserId());
-        });
+            E('dsp-user-name').innerHTML = userid;
+            addNotice('已登录到 ' + userid);
+        };
 
-        // 事件绑定：正在登录中
-        yim.on('account.logging', function ()  {
+        // UI绑定：正在登录中
+        var accountLogining = function ()  {
             E('user-logged').style.display = 'none';
             E('user-no-log').style.display = 'none';
             E('btn-login').setAttribute('disabled', true);
             E('btn-login').value = '登录中...';
-        });
+        };
 
-        // 事件绑定：退出登录
-        yim.on('account.logout', function ()  {
+        // UI绑定：退出登录
+        var accountLogout = function ()  {
             E('user-logged').style.display = 'none';
             E('user-no-log').style.display = 'block';
             E('login-form').style.display = 'flex';
             E('btn-login').removeAttribute('disabled');
             E('btn-login').value = '登录';
             addNotice('退出登录');
-        });
+        };
 
-        // 事件绑定：登录失败
-        yim.on('account.error:*', function (eventName, e)  {
+        // UI绑定：登录失败
+        var accountLoginFail = function ( msg)  {
             E('user-logged').style.display = 'none';
             E('user-no-log').style.display = 'block';
             E('login-form').style.display = 'flex';
             E('btn-login').removeAttribute('disabled');
             E('btn-login').value = '登录';
-            addNotice('登录失败：' + getErrorMsg(e.name));
-        });
+            addNotice('登录失败：' + msg);
+        };
 
-        // 事件绑定：被踢下线
-        yim.on('account.kickoff', function ()  {
+        // UI绑定：被踢下线
+        var kickoff =  function ()  {
             alert('你被踢下线了');
             addNotice('你被踢下线了');
             E('user-logged').style.display = 'none';
@@ -443,18 +495,18 @@ window.vc = new VConsole({
             E('login-form').style.display = 'flex';
             E('btn-login').removeAttribute('disabled');
             E('btn-login').value = '登录';
-        });
+        };
 
-        // 事件绑定：正在请求加入房间
-        yim.on('room.joining:*', function (eventName, roomId)  {
+        // UI绑定：正在请求加入房间
+        var joining = function (roomId)  {
             E('room-joined').style.display = 'none';
             E('room-no-join').style.display = 'none';
             E('room-joining').style.display = 'block';
             E('dsp-room-joining-name').innerHTML = roomId;
-        });
+        };
 
-        // 事件绑定：加入房间
-        yim.on('room.join:*', function (eventName, roomId)  {
+        // UI绑定：加入房间
+        var joinSucess = function ( roomId)  {
             E('room-joined').style.display = 'block';
             E('room-no-join').style.display = 'none';
             E('room-joining').style.display = 'none';
@@ -462,39 +514,34 @@ window.vc = new VConsole({
             E('dsp-room-joining-name').innerHTML = roomId;
             E('text-room-id').value = roomId;
             addNotice('加入房间：' + roomId);
-        });
+        };
 
-        // 事件绑定：退出房间
-        yim.on('room.leave:*', function (eventName, roomId)  {
+        // UI绑定：退出房间
+        var leaveSuccess = function (roomId)  {
             E('room-joined').style.display = 'none';
             E('room-no-join').style.display = 'block';
             E('room-joining').style.display = 'none';
             addNotice('退出房间：' + roomId);
-        });
+        };
 
-        // 事件绑定：加入房间失败
-        yim.on('room.join-error:*', function (eventName, e, roomId)  {
+        // UI绑定：加入房间失败
+        var joinFailed = function (roomId)  {
             E('room-joined').style.display = 'none';
             E('room-no-join').style.display = 'block';
             E('room-joining').style.display = 'none';
-            addNotice('加入房间 ' + roomId + ' 失败：' + getErrorMsg(e.name));
-        });
+            addNotice('加入房间 ' + roomId + ' 失败：');
+        };
 
-        // 事件绑定：退出房间失败
-        yim.on('room.leave-error:*', function (eventName, e, roomId)  {
+        // UI绑定：退出房间失败
+        var leaveFailed = function ( roomId)  {
             E('room-joined').style.display = 'block';
             E('room-no-join').style.display = 'none';
             E('room-joining').style.display = 'none';
             E('dsp-room-name').innerHTML = roomId;
             E('dsp-room-joining-name').innerHTML = roomId;
             E('text-room-id').value = roomId;
-            addNotice('退出房间 ' + roomId + ' 失败：' + getErrorMsg(e.name));
-        });
-
-        // 事件绑定：发送/接收了消息
-        yim.on('message:*', function (eventName, msgObj)  {
-            addChatItem(msgObj);
-        });
+            addNotice('退出房间 ' + roomId + ' 失败：');
+        };
 
         // 打开 vConsole
         E('v-console-switch').onclick = function () {
@@ -506,6 +553,3 @@ window.vc = new VConsole({
 
     }
 });
-}
-
-document.addEventListener('deviceready', onDeviceReady.bind(this), false);
