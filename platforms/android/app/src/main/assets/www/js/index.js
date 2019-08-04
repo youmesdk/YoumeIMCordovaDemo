@@ -46,6 +46,7 @@ var app = {
         console.log('Received Event: ' + id);
     },
     init: function(){
+        console.log('call youme im init');
         cordova.plugins.YoumeIMCordovaPlugin.init(
         "YOUME670584CA1F7BEF370EC7780417B89BFCC4ECBF78",
         "yYG7XY8BOVzPQed9T1/jlnWMhxKFmKZvWSFLxhBNe0nR4lbm5OUk3pTAevmxcBn1mXV9Z+gZ3B0Mv/MxZ4QIeDS4sDRRPzC+5OyjuUcSZdP8dLlnRV7bUUm29E2CrOUaALm9xQgK54biquqPuA0ZTszxHuEKI4nkyMtV9sNCNDMBAAE=",
@@ -59,8 +60,8 @@ var app = {
     },
     login: function(){
         // create random user id for test
-        final double rnd = Math.random();
-        final int i = (int)(rnd * 100);
+        var rnd = Math.random();
+        var i = parseInt(rnd * 10000);
 
         cordova.plugins.YoumeIMCordovaPlugin.login("userid_"+ i,"password", "", code => {
             alert("login success");
@@ -92,11 +93,11 @@ var app = {
         })
         cordova.plugins.YoumeIMCordovaPlugin.registerMsgEventCallback((msg)=>{
             console.log('on recv msg:'+msg)
-            let msg = JSON.parse(msg)
-            if(msg.msgType == 1)//text message
+            let msgObject = JSON.parse(msg)
+            if(msgObject.msgType == 1)//text message
             {
 
-            }else if(msg.msgType == 6) //audio message
+            }else if(msgObject.msgType == 6) //audio message
             {
 
             }

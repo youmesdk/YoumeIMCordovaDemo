@@ -22,8 +22,6 @@ import com.youme.imsdk.callback.YIMEventCallback;
 import com.youme.imsdk.internal.SendMessage;
 import com.youme.imsdk.internal.SendVoiceMsgInfo;
 
-import im.youme.cordovaim.YoumeIMCordovaPlugin.*;
-
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -202,7 +200,7 @@ public class YoumeIMCordovaPlugin extends CordovaPlugin implements YIMEventCallb
             @Override
             public void onStartSendAudioMessage(long requestID, int code, String strText, String strAudioPath, int audioTime) {
                 if(code == 0) {
-                    AudioMessageStartSendInfo msgStartInfo = new AudioMessageStartSendInfo();
+                    im.youme.cordovaim.AudioMessageStartSendInfo msgStartInfo = new im.youme.cordovaim.AudioMessageStartSendInfo();
                     msgStartInfo.msgId = requestID;
                     msgStartInfo.audioText = strText;
                     msgStartInfo.audioPath = strAudioPath;
@@ -256,7 +254,7 @@ public class YoumeIMCordovaPlugin extends CordovaPlugin implements YIMEventCallb
         int msgType = message.getMessageType();
         if (YIMConstInfo.MessageBodyType.TXT == msgType){
             YIMMessageBodyText sdkMsg = (YIMMessageBodyText)message.getMessageBody();
-            TextMessage txtMsg = new TextMessage();
+            im.youme.cordovaim.TextMessage txtMsg = new im.youme.cordovaim.TextMessage();
             txtMsg.createTime = message.getCreateTime();
             txtMsg.isRead = message.getIsRead();
             txtMsg.chatType = message.getChatType();
@@ -285,7 +283,7 @@ public class YoumeIMCordovaPlugin extends CordovaPlugin implements YIMEventCallb
                         public void onDownload(int errorcode, YIMMessage message, String savePath) {
                             if(errorcode == 0) {
                                 YIMMessageBodyAudio sdkMsg = (YIMMessageBodyAudio) message.getMessageBody();
-                                AudioMessage audioMsg = new AudioMessage();
+                                im.youme.cordovaim.AudioMessage audioMsg = new im.youme.cordovaim.AudioMessage();
                                 audioMsg.createTime = message.getCreateTime();
                                 audioMsg.isRead = message.getIsRead();
                                 audioMsg.chatType = message.getChatType();

@@ -1,4 +1,4 @@
-package im.youme.cordovaim.YoumeIMCordovaPlugin;
+package im.youme.cordovaim;
 
 public class AudioMessageStartSendInfo {
     public long msgId = 0L;
