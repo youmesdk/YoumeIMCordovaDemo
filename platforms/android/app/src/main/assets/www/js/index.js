@@ -28,6 +28,9 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+
+        this.init();
+        this.registerCallback();
         this.login();
     },
 
@@ -42,17 +45,62 @@ var app = {
 
         console.log('Received Event: ' + id);
     },
+    init: function(){
+        cordova.plugins.YoumeIMCordovaPlugin.init(
+        "YOUME670584CA1F7BEF370EC7780417B89BFCC4ECBF78",
+        "yYG7XY8BOVzPQed9T1/jlnWMhxKFmKZvWSFLxhBNe0nR4lbm5OUk3pTAevmxcBn1mXV9Z+gZ3B0Mv/MxZ4QIeDS4sDRRPzC+5OyjuUcSZdP8dLlnRV7bUUm29E2CrOUaALm9xQgK54biquqPuA0ZTszxHuEKI4nkyMtV9sNCNDMBAAE=",
+        0,
+        code => {
+            alert("call init success");
+        }, _errCode => {
+            alert("call init fail：" + _errCode);
+        })
+
+    },
     login: function(){
-         try {
-            // 调用方式在插件的 plugin.xml 已做配置
-            cordova.plugins.YoumeIMCordovaPlugin.coolMethod("plugin test", _res => {
-                alert("call plugin success:" + _res);
-            }, _err => {
-                alert("call plugin fail：" + _err);
-            })
-        } catch (_e) {
-            alert(JSON.stringify(_e, "\n", 4));
-        }
+        // create random user id for test
+        final double rnd = Math.random();
+        final int i = (int)(rnd * 100);
+
+        cordova.plugins.YoumeIMCordovaPlugin.login("userid_"+ i,"password", "", code => {
+            alert("login success");
+        }, _errCode => {
+            alert("login fail：" + _errCode);
+        })
+    },
+    logout: function(){
+        cordova.plugins.YoumeIMCordovaPlugin.logout(() => {
+            alert("logout success");
+        }, _errCode => {
+            alert("logout fail：" + _errCode);
+        })
+    },
+    sendTextMessage: function(strRecvId, iChatType, strMsgContent, strAttachParam){
+        cordova.plugins.YoumeIMCordovaPlugin.sendTextMessage(strRecvId, iChatType, strMsgContent, strAttachParam, (msg) => {
+                    alert("send success");
+                    console.log(msg)
+                }, msg => {
+                    alert("send fail：" + msg);
+                })
+    },
+    registerCallback:function(){
+        cordova.plugins.YoumeIMCordovaPlugin.registerReconnectCallback((msg)=>{
+            console.log('on reconnect:'+msg)
+        })
+        cordova.plugins.YoumeIMCordovaPlugin.registerKickOffCallback((msg)=>{
+            console.log('on kickOff:'+msg)
+        })
+        cordova.plugins.YoumeIMCordovaPlugin.registerMsgEventCallback((msg)=>{
+            console.log('on recv msg:'+msg)
+            let msg = JSON.parse(msg)
+            if(msg.msgType == 1)//text message
+            {
+
+            }else if(msg.msgType == 6) //audio message
+            {
+
+            }
+        })
     }
 };
 
