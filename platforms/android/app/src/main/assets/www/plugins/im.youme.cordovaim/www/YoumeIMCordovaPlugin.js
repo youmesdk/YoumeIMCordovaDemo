@@ -33,4 +33,12 @@ exports.stopAndSendAudioMessage = function (success, error) {
     exec(success, error, 'YoumeIMCordovaPlugin', 'stopAndSendAudioMessage', []);
 };
 
+exports.joinChatRoom = function (roomID, success, error) {
+    exec(success, error, 'YoumeIMCordovaPlugin', 'joinChatRoom', [roomID]);
+};
+
+exports.leaveChatRoom = function (roomID, success, error) {
+    exec(success, error, 'YoumeIMCordovaPlugin', 'leaveChatRoom', [roomID]);
+};
+
 });

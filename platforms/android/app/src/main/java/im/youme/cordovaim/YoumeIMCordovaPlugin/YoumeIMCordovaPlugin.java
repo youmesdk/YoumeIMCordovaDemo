@@ -19,6 +19,7 @@ import com.youme.imsdk.YIMMessage;
 import com.youme.imsdk.YIMMessageBodyAudio;
 import com.youme.imsdk.YIMMessageBodyText;
 import com.youme.imsdk.callback.YIMEventCallback;
+import com.youme.imsdk.internal.ChatRoom;
 import com.youme.imsdk.internal.SendMessage;
 import com.youme.imsdk.internal.SendVoiceMsgInfo;
 
@@ -95,9 +96,21 @@ public class YoumeIMCordovaPlugin extends CordovaPlugin implements YIMEventCallb
                 this.cancelAudioMessage();
             }
             return false;
+            case "joinChatRoom":
+            {
+                String roomID     = args.getString(0);
+                this.joinChatRoom(roomID, callbackContext);
+            }
+            break;
             case "stopAndSendAudioMessage":
             {
                 this.stopAndSendAudioMessage(callbackContext);
+            }
+            break;
+            case "leaveChatRoom":
+            {
+                String roomID     = args.getString(0);
+                this.leaveChatRoom(roomID, callbackContext);
             }
             break;
 
@@ -216,6 +229,34 @@ public class YoumeIMCordovaPlugin extends CordovaPlugin implements YIMEventCallb
                 if(code != 0){
                     callbackContext.error(code);
                 }
+            }
+        });
+    }
+
+    private void joinChatRoom(String roomID, CallbackContext callbackContext){
+        YIMClient.getInstance().joinChatRoom(roomID, new YIMEventCallback.ResultCallback<ChatRoom>() {
+            @Override
+            public void onSuccess(ChatRoom chatRoom) {
+                callbackContext.success(chatRoom.groupId);
+            }
+
+            @Override
+            public void onFailed(int code, ChatRoom chatRoom) {
+                callbackContext.error(chatRoom.groupId);
+            }
+        });
+    }
+
+    private void leaveChatRoom(String roomID, CallbackContext callbackContext){
+        YIMClient.getInstance().leaveChatRoom(roomID, new YIMEventCallback.ResultCallback<ChatRoom>() {
+            @Override
+            public void onSuccess(ChatRoom chatRoom) {
+                callbackContext.success(chatRoom.groupId);
+            }
+
+            @Override
+            public void onFailed(int code, ChatRoom chatRoom) {
+                callbackContext.error(chatRoom.groupId);
             }
         });
     }
