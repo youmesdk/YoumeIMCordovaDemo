@@ -2,7 +2,7 @@
 Youme IM Cordova Demo
 
 # Status
-- Android platform is added, and basic function is ready
+- Basic function for android platform is ready
 - iOS support is coming
 
 ```
