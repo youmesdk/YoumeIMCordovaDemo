@@ -14,4 +14,5 @@ cordova run android
 
 # Core files for this demo
 `www/index.html` is UI HTML
+
 `www/demo/main.js` is Demo logic control
