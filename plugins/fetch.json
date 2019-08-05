@@ -10,7 +10,7 @@
   "im.youme.cordovaim": {
     "source": {
       "type": "local",
-      "path": "C:\\Users\\fish\\Documents\\Project\\YoumeIMCordovaDemo\\node_modules\\im.youme.imcordovaplugin"
+      "path": "/Volumes/Data/Project/git/YoumeIMCordovaDemo/node_modules/im.youme.imcordovaplugin"
     },
     "is_top_level": true,
     "variables": {}
