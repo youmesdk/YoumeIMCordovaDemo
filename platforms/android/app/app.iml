@@ -123,5 +123,7 @@
     <orderEntry type="library" name="Gradle: __local_aars__:/Volumes/Data/Project/git/YoumeIMCordovaDemo/platforms/android/app/libs/yim-sdk.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Volumes/Data/Project/git/YoumeIMCordovaDemo/platforms/android/app/libs/alisr.jar:unspecified@jar" level="project" />
     <orderEntry type="module" module-name="CordovaLib" />
+    <orderEntry type="module" module-name="CordovaLib" />
+    <orderEntry type="module" module-name="CordovaLib" />
   </component>
 </module>
