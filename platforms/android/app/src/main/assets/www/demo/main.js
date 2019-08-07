@@ -233,6 +233,11 @@
                  accountLogining();
                  window.lastLoginUserId = userId;
                  cordova.plugins.YoumeIMCordovaPlugin.login(userId,"123456", "", code => {
+
+                    // on login success, you can set message trans type
+                    //  0 message will delivery directly; 1 means just cc to app server, not delivery directly
+                    cordova.plugins.YoumeIMCordovaPlugin.switchTransType(0);
+
                      accountLogin(userId);
                      // if have roomId, join chat room
                      if (roomId) {
