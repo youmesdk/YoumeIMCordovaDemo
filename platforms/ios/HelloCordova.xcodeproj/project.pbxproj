@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0070B6738C4A4F3E931E4620 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ADBEF41F8C345588D1766CC /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
-		0B67B349447B40EFAD869DB8 /* YIMImplement.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5A6001F029142C996FB1764 /* YIMImplement.mm */; };
+		0492739C0EBA476789CAFFAD /* YIMService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 511931814BBA43B4BE48B769 /* YIMService.mm */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		1E9920573EDD439F86079A6B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A2E0287C2A4D38A931825A /* libz.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2343DD6FBDDE41D9A2CC79E7 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAC1059858D4CF0A2DDEF58 /* libc++.1.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
-		34BF5558C5794321A11FBFAC /* YIMCallbackBlock.mm in Sources */ = {isa = PBXBuildFile; fileRef = 311904F750A84221AF1AA848 /* YIMCallbackBlock.mm */; };
-		5AB7C495C7984DDB9B71D5F7 /* AliyunNlsSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9E83611FA7440769C72C9E0 /* AliyunNlsSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		600988B12F714077A6A9F2F4 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6A18D2A1E94D7AA632E0C6 /* libresolv.9.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
-		649C5BB2667E4059A6D28E56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70FD81C09A0463DB5ED601E /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3614A97757A14FA994D0B423 /* YIMClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAA7828D6DB74120BF5D801F /* YIMClient.mm */; };
+		37EDF75FB7904585BC891CFA /* YIMMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = BE463CE6215943B185647D6C /* YIMMessage.m */; };
+		4B81D4D7E9544A40962CDC93 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD555BC4D414A9799F95489 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
-		831CDFEA8C444A20B97FD42F /* libYouMeCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3E52CD8A084B58983A8DA5 /* libYouMeCommon.a */; };
-		97BD625ADBFC4C65B037BF0B /* libyim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDCB72895AB47FCA30C188D /* libyim.a */; };
-		A19FDB3580A24E9399599A67 /* YIMClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = A72E1B42800A448A8A40C5F7 /* YIMClient.mm */; };
-		BBE391FA6E1B4E9E918403F6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E296314F58442990D452AF /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		BCF2C57D96CE4BA0B0138E33 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E2BC0450C14E9F84D6F055 /* libc++.1.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
-		CDB12D3F2B994209903109BB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B73CA224BA431B98417DFB /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		CFA4F6AF22FBC3AA00CD1FD5 /* AliyunNlsSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E83611FA7440769C72C9E0 /* AliyunNlsSdk.framework */; };
-		D15F5283119B4F9F9A4AB14D /* YIMService.mm in Sources */ = {isa = PBXBuildFile; fileRef = D43A49F53BF1462FB6FCF948 /* YIMService.mm */; };
-		D1B494D05163457BB522A6FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8ED0A9E6EB41C4AA8B1537 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		D7D798ED31EA4DDE989E1001 /* YIMMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D6A0D741194B37BADBA1BB /* YIMMessage.m */; };
-		EB029CE98E774DF6B48F63C9 /* YoumeIMCordovaPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB8EEC4C8E04261A92E7E91 /* YoumeIMCordovaPlugin.m */; };
-		EF2E86691D9C428A9C65C19C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9E723873ED47E9BC1909AD /* libsqlite3.0.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
-		F44F7A5644F04032A877F31B /* USCModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D504878880443BA8B9C96D6 /* USCModule.framework */; };
-		F4745A78599045C78E7435B9 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAB6DC1BD7E438AA0C7D105 /* iflyMSC.framework */; };
+		7C6B9F9137AF48B7BDE8D098 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732BD0AB7734443DB6E7F5C8 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7E7B3FEFEE434043AF649862 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA42098B46A49BDA4D3520D /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		813AF3CE6D5B455CA668DED4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CEA121ADB6444FB1E2CFEC /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		87B2C4A80825406AAF635152 /* USCModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 026E7A2239974B98B94DB708 /* USCModule.framework */; };
+		88A945CC393741D89257B936 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58419E89C5044E56AABC3644 /* iflyMSC.framework */; };
+		9D22216CC81E429D9FA7F783 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 53596305296240B7A5E7DCCB /* libresolv.9.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9E5C7668E1D544A79EBCC65A /* YoumeIMCordovaPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89A0FE92FF7E47D7A318CB9F /* YoumeIMCordovaPlugin.mm */; };
+		9ED243C2E01D435EBBCB1C79 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C67EAD8F8BF43F7AB06DC17 /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A5FCABC25D1E4A92821401FE /* libyim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8395686B445D4EF2AA3D14D1 /* libyim.a */; };
+		AF003B27411E4CFEB8D146AF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF933BAB201440AA2F38050 /* libz.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B8C902430CD74A63A91AA96C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFEC5C8E9964DC0A089B57A /* libsqlite3.0.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C9A6A6A1F8B4444EB25402AD /* AliyunNlsSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB3101098144519B8A96214 /* AliyunNlsSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CF72074322FC137A0091AF70 /* AliyunNlsSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB3101098144519B8A96214 /* AliyunNlsSdk.framework */; };
+		DBC7FD1AADE54ECF93177A4A /* YIMImplement.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF1728491D634712B508E1C2 /* YIMImplement.mm */; };
+		E474A6101BD94052BF149DC0 /* libYouMeCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 400CA9BE12CE4801A7474922 /* libYouMeCommon.a */; };
+		F9D1B501634C4E3187D1A52F /* YIMCallbackBlock.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02AF81C3710348F082D8C495 /* YIMCallbackBlock.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5AB7C495C7984DDB9B71D5F7 /* AliyunNlsSdk.framework in Embed Frameworks */,
+				C9A6A6A1F8B4444EB25402AD /* AliyunNlsSdk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,13 +77,16 @@
 
 /* Begin PBXFileReference section */
 		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HelloCordova/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		0605AFF5550446E2B26BDC9E /* YIMCallbackBlock.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMCallbackBlock.h; path = im.youme.cordovaim/YIMCallbackBlock.h; sourceTree = "<group>"; };
-		09D6A0D741194B37BADBA1BB /* YIMMessage.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = YIMMessage.m; path = im.youme.cordovaim/YIMMessage.m; sourceTree = "<group>"; };
-		0D504878880443BA8B9C96D6 /* USCModule.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = USCModule.framework; path = System/Library/Frameworks/USCModule.framework; sourceTree = SDKROOT; };
+		026E7A2239974B98B94DB708 /* USCModule.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = USCModule.framework; path = System/Library/Frameworks/USCModule.framework; sourceTree = SDKROOT; };
+		02AF81C3710348F082D8C495 /* YIMCallbackBlock.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMCallbackBlock.mm; path = im.youme.cordovaim/YIMCallbackBlock.mm; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* HelloCordova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCordova.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EAC1059858D4CF0A2DDEF58 /* libc++.1.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		25CA9608338F4133B935B296 /* YIMCallbackBlock.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMCallbackBlock.h; path = im.youme.cordovaim/YIMCallbackBlock.h; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2AD555BC4D414A9799F95489 /* AudioToolbox.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2C67EAD8F8BF43F7AB06DC17 /* CoreTelephony.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
 		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
 		302D95EE14D2391D003F00A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -92,39 +95,36 @@
 		3047A50F1AB8059700498E2A /* build-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-debug.xcconfig"; path = "cordova/build-debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5101AB8059700498E2A /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-release.xcconfig"; path = "cordova/build-release.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5111AB8059700498E2A /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = cordova/build.xcconfig; sourceTree = SOURCE_ROOT; };
-		311904F750A84221AF1AA848 /* YIMCallbackBlock.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMCallbackBlock.mm; path = im.youme.cordovaim/YIMCallbackBlock.mm; sourceTree = "<group>"; };
-		3236FA771059444DB70356B1 /* YIM.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIM.h; path = im.youme.cordovaim/YIM.h; sourceTree = "<group>"; };
+		30D301B7DDDA4C81B3335856 /* YIMClient.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMClient.h; path = im.youme.cordovaim/YIMClient.h; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* HelloCordova-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HelloCordova-Prefix.pch"; sourceTree = "<group>"; };
-		33E2BC0450C14E9F84D6F055 /* libc++.1.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
-		4F6A18D2A1E94D7AA632E0C6 /* libresolv.9.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
-		4FB81528106D4095BB2B9D25 /* YIMImplement.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMImplement.h; path = im.youme.cordovaim/YIMImplement.h; sourceTree = "<group>"; };
-		58750602D88E44D989569125 /* YIMPlatformDefine.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMPlatformDefine.h; path = im.youme.cordovaim/YIMPlatformDefine.h; sourceTree = "<group>"; };
-		5DAB6DC1BD7E438AA0C7D105 /* iflyMSC.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = iflyMSC.framework; path = System/Library/Frameworks/iflyMSC.framework; sourceTree = SDKROOT; };
-		61E296314F58442990D452AF /* SystemConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3AF933BAB201440AA2F38050 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		400CA9BE12CE4801A7474922 /* libYouMeCommon.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; name = libYouMeCommon.a; path = HelloCordova/Plugins/im.youme.cordovaim/libYouMeCommon.a; sourceTree = "<group>"; };
+		511931814BBA43B4BE48B769 /* YIMService.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMService.mm; path = im.youme.cordovaim/YIMService.mm; sourceTree = "<group>"; };
+		53596305296240B7A5E7DCCB /* libresolv.9.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		58419E89C5044E56AABC3644 /* iflyMSC.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = iflyMSC.framework; path = System/Library/Frameworks/iflyMSC.framework; sourceTree = SDKROOT; };
+		5EFEC5C8E9964DC0A089B57A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CDVLaunchScreen.storyboard; path = HelloCordova/CDVLaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		6B9E723873ED47E9BC1909AD /* libsqlite3.0.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		7E7A272D7231493D9D5742F1 /* YIMService.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMService.h; path = im.youme.cordovaim/YIMService.h; sourceTree = "<group>"; };
-		8880F387AAA54B61B9902AFF /* YIMClient.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMClient.h; path = im.youme.cordovaim/YIMClient.h; sourceTree = "<group>"; };
+		732BD0AB7734443DB6E7F5C8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8395686B445D4EF2AA3D14D1 /* libyim.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; name = libyim.a; path = HelloCordova/Plugins/im.youme.cordovaim/libyim.a; sourceTree = "<group>"; };
+		89A0FE92FF7E47D7A318CB9F /* YoumeIMCordovaPlugin.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YoumeIMCordovaPlugin.mm; path = im.youme.cordovaim/YoumeIMCordovaPlugin.mm; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* HelloCordova-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "HelloCordova-Info.plist"; path = "HelloCordova/HelloCordova-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
-		9ADBEF41F8C345588D1766CC /* CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		9D3E52CD8A084B58983A8DA5 /* libYouMeCommon.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; name = libYouMeCommon.a; path = HelloCordova/Plugins/im.youme.cordovaim/libYouMeCommon.a; sourceTree = "<group>"; };
-		A72E1B42800A448A8A40C5F7 /* YIMClient.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMClient.mm; path = im.youme.cordovaim/YIMClient.mm; sourceTree = "<group>"; };
-		ABDCB72895AB47FCA30C188D /* libyim.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; name = libyim.a; path = HelloCordova/Plugins/im.youme.cordovaim/libyim.a; sourceTree = "<group>"; };
-		B5A6001F029142C996FB1764 /* YIMImplement.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMImplement.mm; path = im.youme.cordovaim/YIMImplement.mm; sourceTree = "<group>"; };
-		BA8ED0A9E6EB41C4AA8B1537 /* AVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		BFB8EEC4C8E04261A92E7E91 /* YoumeIMCordovaPlugin.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = YoumeIMCordovaPlugin.m; path = im.youme.cordovaim/YoumeIMCordovaPlugin.m; sourceTree = "<group>"; };
-		C0B73CA224BA431B98417DFB /* CoreTelephony.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		93C14F70FAC6444F92BF61DB /* YIMMessage.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMMessage.h; path = im.youme.cordovaim/YIMMessage.h; sourceTree = "<group>"; };
+		9DB3101098144519B8A96214 /* AliyunNlsSdk.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AliyunNlsSdk.framework; path = HelloCordova/Plugins/im.youme.cordovaim/AliyunNlsSdk.framework; sourceTree = "<group>"; };
+		A899464A639B4EA7B70946C9 /* YIMCallbackProtocol.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMCallbackProtocol.h; path = im.youme.cordovaim/YIMCallbackProtocol.h; sourceTree = "<group>"; };
+		AF1728491D634712B508E1C2 /* YIMImplement.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMImplement.mm; path = im.youme.cordovaim/YIMImplement.mm; sourceTree = "<group>"; };
+		B86171358AFC4A619D211E2C /* YIMPlatformDefine.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMPlatformDefine.h; path = im.youme.cordovaim/YIMPlatformDefine.h; sourceTree = "<group>"; };
+		BAA7828D6DB74120BF5D801F /* YIMClient.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMClient.mm; path = im.youme.cordovaim/YIMClient.mm; sourceTree = "<group>"; };
+		BE463CE6215943B185647D6C /* YIMMessage.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = YIMMessage.m; path = im.youme.cordovaim/YIMMessage.m; sourceTree = "<group>"; };
 		CFA4F6A022FBBD3A00CD1FD5 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
-		D43A49F53BF1462FB6FCF948 /* YIMService.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMService.mm; path = im.youme.cordovaim/YIMService.mm; sourceTree = "<group>"; };
-		D4F302379DEB4ABA92A3530D /* YIMCallbackProtocol.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMCallbackProtocol.h; path = im.youme.cordovaim/YIMCallbackProtocol.h; sourceTree = "<group>"; };
-		D9E83611FA7440769C72C9E0 /* AliyunNlsSdk.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AliyunNlsSdk.framework; path = HelloCordova/Plugins/im.youme.cordovaim/AliyunNlsSdk.framework; sourceTree = "<group>"; };
-		E2A2E0287C2A4D38A931825A /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		E3E09714DB1E400CBE80754A /* YIMMessage.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMMessage.h; path = im.youme.cordovaim/YIMMessage.h; sourceTree = "<group>"; };
-		E70FD81C09A0463DB5ED601E /* AudioToolbox.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D4AA055B79294FF393C06810 /* YIM.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIM.h; path = im.youme.cordovaim/YIM.h; sourceTree = "<group>"; };
+		D4B1C3FCE49144B08B36C09F /* YIMImplement.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMImplement.h; path = im.youme.cordovaim/YIMImplement.h; sourceTree = "<group>"; };
+		D9CEA121ADB6444FB1E2CFEC /* CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EAA42098B46A49BDA4D3520D /* AVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = HelloCordova/config.xml; sourceTree = "<group>"; };
+		FBBEF98606324C1E80019D21 /* YIMService.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMService.h; path = im.youme.cordovaim/YIMService.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,20 +133,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				F44F7A5644F04032A877F31B /* USCModule.framework in Frameworks */,
-				F4745A78599045C78E7435B9 /* iflyMSC.framework in Frameworks */,
-				831CDFEA8C444A20B97FD42F /* libYouMeCommon.a in Frameworks */,
-				97BD625ADBFC4C65B037BF0B /* libyim.a in Frameworks */,
-				BCF2C57D96CE4BA0B0138E33 /* libc++.1.tbd in Frameworks */,
-				EF2E86691D9C428A9C65C19C /* libsqlite3.0.tbd in Frameworks */,
-				600988B12F714077A6A9F2F4 /* libresolv.9.tbd in Frameworks */,
-				BBE391FA6E1B4E9E918403F6 /* SystemConfiguration.framework in Frameworks */,
-				1E9920573EDD439F86079A6B /* libz.tbd in Frameworks */,
-				CDB12D3F2B994209903109BB /* CoreTelephony.framework in Frameworks */,
-				D1B494D05163457BB522A6FA /* AVFoundation.framework in Frameworks */,
-				CFA4F6AF22FBC3AA00CD1FD5 /* AliyunNlsSdk.framework in Frameworks */,
-				649C5BB2667E4059A6D28E56 /* AudioToolbox.framework in Frameworks */,
-				0070B6738C4A4F3E931E4620 /* CoreLocation.framework in Frameworks */,
+				87B2C4A80825406AAF635152 /* USCModule.framework in Frameworks */,
+				88A945CC393741D89257B936 /* iflyMSC.framework in Frameworks */,
+				E474A6101BD94052BF149DC0 /* libYouMeCommon.a in Frameworks */,
+				A5FCABC25D1E4A92821401FE /* libyim.a in Frameworks */,
+				2343DD6FBDDE41D9A2CC79E7 /* libc++.1.tbd in Frameworks */,
+				B8C902430CD74A63A91AA96C /* libsqlite3.0.tbd in Frameworks */,
+				9D22216CC81E429D9FA7F783 /* libresolv.9.tbd in Frameworks */,
+				7C6B9F9137AF48B7BDE8D098 /* SystemConfiguration.framework in Frameworks */,
+				AF003B27411E4CFEB8D146AF /* libz.tbd in Frameworks */,
+				9ED243C2E01D435EBBCB1C79 /* CoreTelephony.framework in Frameworks */,
+				7E7B3FEFEE434043AF649862 /* AVFoundation.framework in Frameworks */,
+				4B81D4D7E9544A40962CDC93 /* AudioToolbox.framework in Frameworks */,
+				813AF3CE6D5B455CA668DED4 /* CoreLocation.framework in Frameworks */,
+				CF72074322FC137A0091AF70 /* AliyunNlsSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,20 +218,20 @@
 			isa = PBXGroup;
 			children = (
 				CFA4F6A022FBBD3A00CD1FD5 /* AudioUnit.framework */,
-				0D504878880443BA8B9C96D6 /* USCModule.framework */,
-				5DAB6DC1BD7E438AA0C7D105 /* iflyMSC.framework */,
-				9D3E52CD8A084B58983A8DA5 /* libYouMeCommon.a */,
-				ABDCB72895AB47FCA30C188D /* libyim.a */,
-				D9E83611FA7440769C72C9E0 /* AliyunNlsSdk.framework */,
-				33E2BC0450C14E9F84D6F055 /* libc++.1.tbd */,
-				6B9E723873ED47E9BC1909AD /* libsqlite3.0.tbd */,
-				4F6A18D2A1E94D7AA632E0C6 /* libresolv.9.tbd */,
-				61E296314F58442990D452AF /* SystemConfiguration.framework */,
-				E2A2E0287C2A4D38A931825A /* libz.tbd */,
-				C0B73CA224BA431B98417DFB /* CoreTelephony.framework */,
-				BA8ED0A9E6EB41C4AA8B1537 /* AVFoundation.framework */,
-				E70FD81C09A0463DB5ED601E /* AudioToolbox.framework */,
-				9ADBEF41F8C345588D1766CC /* CoreLocation.framework */,
+				026E7A2239974B98B94DB708 /* USCModule.framework */,
+				58419E89C5044E56AABC3644 /* iflyMSC.framework */,
+				400CA9BE12CE4801A7474922 /* libYouMeCommon.a */,
+				8395686B445D4EF2AA3D14D1 /* libyim.a */,
+				9DB3101098144519B8A96214 /* AliyunNlsSdk.framework */,
+				1EAC1059858D4CF0A2DDEF58 /* libc++.1.tbd */,
+				5EFEC5C8E9964DC0A089B57A /* libsqlite3.0.tbd */,
+				53596305296240B7A5E7DCCB /* libresolv.9.tbd */,
+				732BD0AB7734443DB6E7F5C8 /* SystemConfiguration.framework */,
+				3AF933BAB201440AA2F38050 /* libz.tbd */,
+				2C67EAD8F8BF43F7AB06DC17 /* CoreTelephony.framework */,
+				EAA42098B46A49BDA4D3520D /* AVFoundation.framework */,
+				2AD555BC4D414A9799F95489 /* AudioToolbox.framework */,
+				D9CEA121ADB6444FB1E2CFEC /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -258,20 +258,20 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				311904F750A84221AF1AA848 /* YIMCallbackBlock.mm */,
-				A72E1B42800A448A8A40C5F7 /* YIMClient.mm */,
-				B5A6001F029142C996FB1764 /* YIMImplement.mm */,
-				09D6A0D741194B37BADBA1BB /* YIMMessage.m */,
-				D43A49F53BF1462FB6FCF948 /* YIMService.mm */,
-				BFB8EEC4C8E04261A92E7E91 /* YoumeIMCordovaPlugin.m */,
-				3236FA771059444DB70356B1 /* YIM.h */,
-				0605AFF5550446E2B26BDC9E /* YIMCallbackBlock.h */,
-				D4F302379DEB4ABA92A3530D /* YIMCallbackProtocol.h */,
-				8880F387AAA54B61B9902AFF /* YIMClient.h */,
-				4FB81528106D4095BB2B9D25 /* YIMImplement.h */,
-				E3E09714DB1E400CBE80754A /* YIMMessage.h */,
-				7E7A272D7231493D9D5742F1 /* YIMService.h */,
-				58750602D88E44D989569125 /* YIMPlatformDefine.h */,
+				02AF81C3710348F082D8C495 /* YIMCallbackBlock.mm */,
+				BAA7828D6DB74120BF5D801F /* YIMClient.mm */,
+				AF1728491D634712B508E1C2 /* YIMImplement.mm */,
+				BE463CE6215943B185647D6C /* YIMMessage.m */,
+				511931814BBA43B4BE48B769 /* YIMService.mm */,
+				89A0FE92FF7E47D7A318CB9F /* YoumeIMCordovaPlugin.mm */,
+				D4AA055B79294FF393C06810 /* YIM.h */,
+				25CA9608338F4133B935B296 /* YIMCallbackBlock.h */,
+				A899464A639B4EA7B70946C9 /* YIMCallbackProtocol.h */,
+				30D301B7DDDA4C81B3335856 /* YIMClient.h */,
+				D4B1C3FCE49144B08B36C09F /* YIMImplement.h */,
+				93C14F70FAC6444F92BF61DB /* YIMMessage.h */,
+				FBBEF98606324C1E80019D21 /* YIMService.h */,
+				B86171358AFC4A619D211E2C /* YIMPlatformDefine.h */,
 			);
 			name = Plugins;
 			path = HelloCordova/Plugins;
@@ -403,12 +403,12 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				34BF5558C5794321A11FBFAC /* YIMCallbackBlock.mm in Sources */,
-				A19FDB3580A24E9399599A67 /* YIMClient.mm in Sources */,
-				0B67B349447B40EFAD869DB8 /* YIMImplement.mm in Sources */,
-				D7D798ED31EA4DDE989E1001 /* YIMMessage.m in Sources */,
-				D15F5283119B4F9F9A4AB14D /* YIMService.mm in Sources */,
-				EB029CE98E774DF6B48F63C9 /* YoumeIMCordovaPlugin.m in Sources */,
+				F9D1B501634C4E3187D1A52F /* YIMCallbackBlock.mm in Sources */,
+				3614A97757A14FA994D0B423 /* YIMClient.mm in Sources */,
+				DBC7FD1AADE54ECF93177A4A /* YIMImplement.mm in Sources */,
+				37EDF75FB7904585BC891CFA /* YIMMessage.m in Sources */,
+				0492739C0EBA476789CAFFAD /* YIMService.mm in Sources */,
+				9E5C7668E1D544A79EBCC65A /* YoumeIMCordovaPlugin.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +443,7 @@
 					HelloCordova/Plugins/im.youme.cordovaim,
 					HelloCordova/Plugins/im.youme.cordovaim,
 					"$(PROJECT_DIR)/HelloCordova/Plugins/im.youme.cordovaim",
+					"\"HelloCordova/Plugins/im.youme.cordovaim\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -487,6 +488,7 @@
 					HelloCordova/Plugins/im.youme.cordovaim,
 					HelloCordova/Plugins/im.youme.cordovaim,
 					"$(PROJECT_DIR)/HelloCordova/Plugins/im.youme.cordovaim",
+					"\"HelloCordova/Plugins/im.youme.cordovaim\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloCordova/HelloCordova-Prefix.pch";
