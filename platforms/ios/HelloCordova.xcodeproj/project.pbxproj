@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0070B6738C4A4F3E931E4620 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ADBEF41F8C345588D1766CC /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
+		0B67B349447B40EFAD869DB8 /* YIMImplement.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5A6001F029142C996FB1764 /* YIMImplement.mm */; };
+		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1E9920573EDD439F86079A6B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A2E0287C2A4D38A931825A /* libz.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
+		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
+		34BF5558C5794321A11FBFAC /* YIMCallbackBlock.mm in Sources */ = {isa = PBXBuildFile; fileRef = 311904F750A84221AF1AA848 /* YIMCallbackBlock.mm */; };
+		5AB7C495C7984DDB9B71D5F7 /* AliyunNlsSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9E83611FA7440769C72C9E0 /* AliyunNlsSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		600988B12F714077A6A9F2F4 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6A18D2A1E94D7AA632E0C6 /* libresolv.9.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		649C5BB2667E4059A6D28E56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70FD81C09A0463DB5ED601E /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
+		831CDFEA8C444A20B97FD42F /* libYouMeCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3E52CD8A084B58983A8DA5 /* libYouMeCommon.a */; };
+		97BD625ADBFC4C65B037BF0B /* libyim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDCB72895AB47FCA30C188D /* libyim.a */; };
+		A19FDB3580A24E9399599A67 /* YIMClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = A72E1B42800A448A8A40C5F7 /* YIMClient.mm */; };
+		BBE391FA6E1B4E9E918403F6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E296314F58442990D452AF /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BCF2C57D96CE4BA0B0138E33 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E2BC0450C14E9F84D6F055 /* libc++.1.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CDB12D3F2B994209903109BB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B73CA224BA431B98417DFB /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CFA4F6AF22FBC3AA00CD1FD5 /* AliyunNlsSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E83611FA7440769C72C9E0 /* AliyunNlsSdk.framework */; };
+		D15F5283119B4F9F9A4AB14D /* YIMService.mm in Sources */ = {isa = PBXBuildFile; fileRef = D43A49F53BF1462FB6FCF948 /* YIMService.mm */; };
+		D1B494D05163457BB522A6FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8ED0A9E6EB41C4AA8B1537 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D7D798ED31EA4DDE989E1001 /* YIMMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D6A0D741194B37BADBA1BB /* YIMMessage.m */; };
+		EB029CE98E774DF6B48F63C9 /* YoumeIMCordovaPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB8EEC4C8E04261A92E7E91 /* YoumeIMCordovaPlugin.m */; };
+		EF2E86691D9C428A9C65C19C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9E723873ED47E9BC1909AD /* libsqlite3.0.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F44F7A5644F04032A877F31B /* USCModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D504878880443BA8B9C96D6 /* USCModule.framework */; };
+		F4745A78599045C78E7435B9 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAB6DC1BD7E438AA0C7D105 /* iflyMSC.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		301BF534109A57CC0062928A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = CordovaLib;
+		};
+		301BF550109A68C00062928A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = CordovaLib;
+		};
+		907D8123214C687600058A10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C0C01EB21E3911D50056E6CB;
+			remoteInfo = Cordova;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8E5C93C8822641D790B577F8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5AB7C495C7984DDB9B71D5F7 /* AliyunNlsSdk.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HelloCordova/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		0605AFF5550446E2B26BDC9E /* YIMCallbackBlock.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMCallbackBlock.h; path = im.youme.cordovaim/YIMCallbackBlock.h; sourceTree = "<group>"; };
+		09D6A0D741194B37BADBA1BB /* YIMMessage.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = YIMMessage.m; path = im.youme.cordovaim/YIMMessage.m; sourceTree = "<group>"; };
+		0D504878880443BA8B9C96D6 /* USCModule.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = USCModule.framework; path = System/Library/Frameworks/USCModule.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* HelloCordova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCordova.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
+		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
+		302D95EE14D2391D003F00A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		302D95EF14D2391D003F00A1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		302D95F014D2391D003F00A1 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		3047A50F1AB8059700498E2A /* build-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-debug.xcconfig"; path = "cordova/build-debug.xcconfig"; sourceTree = SOURCE_ROOT; };
+		3047A5101AB8059700498E2A /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-release.xcconfig"; path = "cordova/build-release.xcconfig"; sourceTree = SOURCE_ROOT; };
+		3047A5111AB8059700498E2A /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = cordova/build.xcconfig; sourceTree = SOURCE_ROOT; };
+		311904F750A84221AF1AA848 /* YIMCallbackBlock.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMCallbackBlock.mm; path = im.youme.cordovaim/YIMCallbackBlock.mm; sourceTree = "<group>"; };
+		3236FA771059444DB70356B1 /* YIM.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIM.h; path = im.youme.cordovaim/YIM.h; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* HelloCordova-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HelloCordova-Prefix.pch"; sourceTree = "<group>"; };
+		33E2BC0450C14E9F84D6F055 /* libc++.1.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		4F6A18D2A1E94D7AA632E0C6 /* libresolv.9.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		4FB81528106D4095BB2B9D25 /* YIMImplement.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMImplement.h; path = im.youme.cordovaim/YIMImplement.h; sourceTree = "<group>"; };
+		58750602D88E44D989569125 /* YIMPlatformDefine.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMPlatformDefine.h; path = im.youme.cordovaim/YIMPlatformDefine.h; sourceTree = "<group>"; };
+		5DAB6DC1BD7E438AA0C7D105 /* iflyMSC.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = iflyMSC.framework; path = System/Library/Frameworks/iflyMSC.framework; sourceTree = SDKROOT; };
+		61E296314F58442990D452AF /* SystemConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CDVLaunchScreen.storyboard; path = HelloCordova/CDVLaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		6B9E723873ED47E9BC1909AD /* libsqlite3.0.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		7E7A272D7231493D9D5742F1 /* YIMService.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMService.h; path = im.youme.cordovaim/YIMService.h; sourceTree = "<group>"; };
+		8880F387AAA54B61B9902AFF /* YIMClient.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMClient.h; path = im.youme.cordovaim/YIMClient.h; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* HelloCordova-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "HelloCordova-Info.plist"; path = "HelloCordova/HelloCordova-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
+		9ADBEF41F8C345588D1766CC /* CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9D3E52CD8A084B58983A8DA5 /* libYouMeCommon.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; name = libYouMeCommon.a; path = HelloCordova/Plugins/im.youme.cordovaim/libYouMeCommon.a; sourceTree = "<group>"; };
+		A72E1B42800A448A8A40C5F7 /* YIMClient.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMClient.mm; path = im.youme.cordovaim/YIMClient.mm; sourceTree = "<group>"; };
+		ABDCB72895AB47FCA30C188D /* libyim.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; name = libyim.a; path = HelloCordova/Plugins/im.youme.cordovaim/libyim.a; sourceTree = "<group>"; };
+		B5A6001F029142C996FB1764 /* YIMImplement.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMImplement.mm; path = im.youme.cordovaim/YIMImplement.mm; sourceTree = "<group>"; };
+		BA8ED0A9E6EB41C4AA8B1537 /* AVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BFB8EEC4C8E04261A92E7E91 /* YoumeIMCordovaPlugin.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = YoumeIMCordovaPlugin.m; path = im.youme.cordovaim/YoumeIMCordovaPlugin.m; sourceTree = "<group>"; };
+		C0B73CA224BA431B98417DFB /* CoreTelephony.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		CFA4F6A022FBBD3A00CD1FD5 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		D43A49F53BF1462FB6FCF948 /* YIMService.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = YIMService.mm; path = im.youme.cordovaim/YIMService.mm; sourceTree = "<group>"; };
+		D4F302379DEB4ABA92A3530D /* YIMCallbackProtocol.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMCallbackProtocol.h; path = im.youme.cordovaim/YIMCallbackProtocol.h; sourceTree = "<group>"; };
+		D9E83611FA7440769C72C9E0 /* AliyunNlsSdk.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AliyunNlsSdk.framework; path = HelloCordova/Plugins/im.youme.cordovaim/AliyunNlsSdk.framework; sourceTree = "<group>"; };
+		E2A2E0287C2A4D38A931825A /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E3E09714DB1E400CBE80754A /* YIMMessage.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = YIMMessage.h; path = im.youme.cordovaim/YIMMessage.h; sourceTree = "<group>"; };
+		E70FD81C09A0463DB5ED601E /* AudioToolbox.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
+		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
+		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = HelloCordova/config.xml; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
+				F44F7A5644F04032A877F31B /* USCModule.framework in Frameworks */,
+				F4745A78599045C78E7435B9 /* iflyMSC.framework in Frameworks */,
+				831CDFEA8C444A20B97FD42F /* libYouMeCommon.a in Frameworks */,
+				97BD625ADBFC4C65B037BF0B /* libyim.a in Frameworks */,
+				BCF2C57D96CE4BA0B0138E33 /* libc++.1.tbd in Frameworks */,
+				EF2E86691D9C428A9C65C19C /* libsqlite3.0.tbd in Frameworks */,
+				600988B12F714077A6A9F2F4 /* libresolv.9.tbd in Frameworks */,
+				BBE391FA6E1B4E9E918403F6 /* SystemConfiguration.framework in Frameworks */,
+				1E9920573EDD439F86079A6B /* libz.tbd in Frameworks */,
+				CDB12D3F2B994209903109BB /* CoreTelephony.framework in Frameworks */,
+				D1B494D05163457BB522A6FA /* AVFoundation.framework in Frameworks */,
+				CFA4F6AF22FBC3AA00CD1FD5 /* AliyunNlsSdk.framework in Frameworks */,
+				649C5BB2667E4059A6D28E56 /* AudioToolbox.framework in Frameworks */,
+				0070B6738C4A4F3E931E4620 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				302D95EE14D2391D003F00A1 /* MainViewController.h */,
+				302D95EF14D2391D003F00A1 /* MainViewController.m */,
+				302D95F014D2391D003F00A1 /* MainViewController.xib */,
+				1D3623240D0F684500981E51 /* AppDelegate.h */,
+				1D3623250D0F684500981E51 /* AppDelegate.m */,
+			);
+			name = Classes;
+			path = HelloCordova/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* HelloCordova.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				EB87FDF41871DAF40020F90C /* config.xml */,
+				EB87FDF31871DA8E0020F90C /* www */,
+				EB87FDF11871DA420020F90C /* Staging */,
+				301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				307C750510C5A3420062BCA9 /* Plugins */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* HelloCordova-Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */,
+			);
+			name = "Other Sources";
+			path = HelloCordova;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0207DA571B56EA530066E2B4 /* Images.xcassets */,
+				3047A50E1AB8057F00498E2A /* config */,
+				8D1107310486CEB800E47090 /* HelloCordova-Info.plist */,
+				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
+			);
+			name = Resources;
+			path = HelloCordova/Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFA4F6A022FBBD3A00CD1FD5 /* AudioUnit.framework */,
+				0D504878880443BA8B9C96D6 /* USCModule.framework */,
+				5DAB6DC1BD7E438AA0C7D105 /* iflyMSC.framework */,
+				9D3E52CD8A084B58983A8DA5 /* libYouMeCommon.a */,
+				ABDCB72895AB47FCA30C188D /* libyim.a */,
+				D9E83611FA7440769C72C9E0 /* AliyunNlsSdk.framework */,
+				33E2BC0450C14E9F84D6F055 /* libc++.1.tbd */,
+				6B9E723873ED47E9BC1909AD /* libsqlite3.0.tbd */,
+				4F6A18D2A1E94D7AA632E0C6 /* libresolv.9.tbd */,
+				61E296314F58442990D452AF /* SystemConfiguration.framework */,
+				E2A2E0287C2A4D38A931825A /* libz.tbd */,
+				C0B73CA224BA431B98417DFB /* CoreTelephony.framework */,
+				BA8ED0A9E6EB41C4AA8B1537 /* AVFoundation.framework */,
+				E70FD81C09A0463DB5ED601E /* AudioToolbox.framework */,
+				9ADBEF41F8C345588D1766CC /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		301BF52E109A57CC0062928A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				301BF535109A57CC0062928A /* libCordova.a */,
+				907D8124214C687600058A10 /* Cordova.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3047A50E1AB8057F00498E2A /* config */ = {
+			isa = PBXGroup;
+			children = (
+				3047A50F1AB8059700498E2A /* build-debug.xcconfig */,
+				3047A5101AB8059700498E2A /* build-release.xcconfig */,
+				3047A5111AB8059700498E2A /* build.xcconfig */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		307C750510C5A3420062BCA9 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				311904F750A84221AF1AA848 /* YIMCallbackBlock.mm */,
+				A72E1B42800A448A8A40C5F7 /* YIMClient.mm */,
+				B5A6001F029142C996FB1764 /* YIMImplement.mm */,
+				09D6A0D741194B37BADBA1BB /* YIMMessage.m */,
+				D43A49F53BF1462FB6FCF948 /* YIMService.mm */,
+				BFB8EEC4C8E04261A92E7E91 /* YoumeIMCordovaPlugin.m */,
+				3236FA771059444DB70356B1 /* YIM.h */,
+				0605AFF5550446E2B26BDC9E /* YIMCallbackBlock.h */,
+				D4F302379DEB4ABA92A3530D /* YIMCallbackProtocol.h */,
+				8880F387AAA54B61B9902AFF /* YIMClient.h */,
+				4FB81528106D4095BB2B9D25 /* YIMImplement.h */,
+				E3E09714DB1E400CBE80754A /* YIMMessage.h */,
+				7E7A272D7231493D9D5742F1 /* YIMService.h */,
+				58750602D88E44D989569125 /* YIMPlatformDefine.h */,
+			);
+			name = Plugins;
+			path = HelloCordova/Plugins;
+			sourceTree = SOURCE_ROOT;
+		};
+		EB87FDF11871DA420020F90C /* Staging */ = {
+			isa = PBXGroup;
+			children = (
+				F840E1F0165FE0F500CFE078 /* config.xml */,
+				301BF56E109A69640062928A /* www */,
+			);
+			name = Staging;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* HelloCordova */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "HelloCordova" */;
+			buildPhases = (
+				304B58A110DAC018002A0835 /* Copy www directory */,
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				8E5C93C8822641D790B577F8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				301BF551109A68C00062928A /* PBXTargetDependency */,
+			);
+			name = HelloCordova;
+			productName = HelloCordova;
+			productReference = 1D6058910D05DD3D006BFB54 /* HelloCordova.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 510;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = NUZXKA7782;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "HelloCordova" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 301BF52E109A57CC0062928A /* Products */;
+					ProjectRef = 301BF52D109A57CC0062928A /* CordovaLib/CordovaLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* HelloCordova */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		301BF535109A57CC0062928A /* libCordova.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCordova.a;
+			remoteRef = 301BF534109A57CC0062928A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		907D8124214C687600058A10 /* Cordova.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cordova.framework;
+			remoteRef = 907D8123214C687600058A10 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
+				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
+				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		304B58A110DAC018002A0835 /* Copy www directory */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy www directory";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/HelloCordova/Scripts/copy-www-build-step.sh\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
+				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				34BF5558C5794321A11FBFAC /* YIMCallbackBlock.mm in Sources */,
+				A19FDB3580A24E9399599A67 /* YIMClient.mm in Sources */,
+				0B67B349447B40EFAD869DB8 /* YIMImplement.mm in Sources */,
+				D7D798ED31EA4DDE989E1001 /* YIMMessage.m in Sources */,
+				D15F5283119B4F9F9A4AB14D /* YIMService.mm in Sources */,
+				EB029CE98E774DF6B48F63C9 /* YoumeIMCordovaPlugin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		301BF551109A68C00062928A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CordovaLib;
+			targetProxy = 301BF550109A68C00062928A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A50F1AB8059700498E2A /* build-debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = NUZXKA7782;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					HelloCordova/Plugins/im.youme.cordovaim,
+					HelloCordova/Plugins/im.youme.cordovaim,
+					HelloCordova/Plugins/im.youme.cordovaim,
+					HelloCordova/Plugins/im.youme.cordovaim,
+					"$(PROJECT_DIR)/HelloCordova/Plugins/im.youme.cordovaim",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloCordova/HelloCordova-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "HelloCordova/HelloCordova-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)/Plugins/im.youme.cordovaim\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/Plugins/im.youme.cordovaim\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/Plugins/im.youme.cordovaim\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/Plugins/im.youme.cordovaim\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.youme.cordovademo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = YouMeDemoTest1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A5101AB8059700498E2A /* build-release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = NUZXKA7782;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					HelloCordova/Plugins/im.youme.cordovaim,
+					HelloCordova/Plugins/im.youme.cordovaim,
+					HelloCordova/Plugins/im.youme.cordovaim,
+					HelloCordova/Plugins/im.youme.cordovaim,
+					"$(PROJECT_DIR)/HelloCordova/Plugins/im.youme.cordovaim",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloCordova/HelloCordova-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "HelloCordova/HelloCordova-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)/Plugins/im.youme.cordovaim\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/Plugins/im.youme.cordovaim\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/Plugins/im.youme.cordovaim\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)/Plugins/im.youme.cordovaim\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.youme.cordovademo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = YouMeDemoTest1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A5111AB8059700498E2A /* build.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cordova.hellocordova;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3047A5111AB8059700498E2A /* build.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cordova.hellocordova;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "HelloCordova" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "HelloCordova" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
