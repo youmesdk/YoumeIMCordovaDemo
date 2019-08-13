@@ -1,5 +1,5 @@
 {
-  "name": "helloworld",
+  "name": "cordova-plugin-youme-im-demo",
   "displayName": "HelloCordova",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
@@ -14,6 +14,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "cordova-android": "^8.0.0",
+    "cordova-plugin-youme-im": "0.0.2",
     "im.youme.imcordovaplugin": "file:../YoumeIMCordovaPlugin"
   },
   "devDependencies": {
