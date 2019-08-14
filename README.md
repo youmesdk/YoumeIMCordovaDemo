@@ -24,7 +24,7 @@ cordova run ios
 # Update plugin
 ```
 cordova plugin remove im.youme.cordovaim
-cordova plugin add /PathTo/YoumeIMCordovaPlugin
+cordova plugin add cordova-plugin-youme-im
 ```
 
 # Core files for this demo

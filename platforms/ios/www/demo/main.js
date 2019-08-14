@@ -437,6 +437,7 @@ var demo = {
                 cordova.plugins.YoumeIMCordovaPlugin.stopAndSendAudioMessage(
                     audioMsgInfo =>{
                         // TODO ready for display
+                                                                             console.log(audioMsgInfo)
                         var jsonMsg = JSON.parse(audioMsgInfo);
                         var msgObj = {
                             isFromMe: true,

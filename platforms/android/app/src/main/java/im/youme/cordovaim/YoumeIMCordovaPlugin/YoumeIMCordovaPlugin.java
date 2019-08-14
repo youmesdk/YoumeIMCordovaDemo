@@ -17,6 +17,7 @@ import com.youme.imsdk.YIMClient;
 import com.youme.imsdk.YIMConstInfo;
 import com.youme.imsdk.YIMMessage;
 import com.youme.imsdk.YIMMessageBodyAudio;
+import com.youme.imsdk.YIMMessageBodyFile;
 import com.youme.imsdk.YIMMessageBodyText;
 import com.youme.imsdk.callback.YIMEventCallback;
 import com.youme.imsdk.internal.ChatRoom;
@@ -129,6 +130,19 @@ public class YoumeIMCordovaPlugin extends CordovaPlugin implements YIMEventCallb
                 int    transType   = args.getInt(0);
                 this.switchTransType(transType, callbackContext);
             }
+            break;
+            case "sendFileMessage":
+            {
+                String recvID     = args.getString(0);
+                int    chatType   = args.getInt(1);
+                String filePath = args.getString(2);
+                String attachPram = args.getString(3);
+                int    fileType   = args.getInt(4);
+                filePath = filePath.replace("file:///","/");
+                filePath = filePath.replace("FILE:///","/");
+                this.sendFileMessage(recvID, chatType, filePath, attachPram, fileType, callbackContext);
+            }
+            break;
             default:
                 return false;
         }
@@ -191,6 +205,25 @@ public class YoumeIMCordovaPlugin extends CordovaPlugin implements YIMEventCallb
 
     private void sendTextMessage(String recvID, int chatType, String msgContent, String attachParam, CallbackContext callbackContext){
         YIMClient.getInstance().sendTextMessage(recvID, chatType, msgContent, attachParam, new   YIMEventCallback.ResultCallback<SendMessage>(){
+
+            @Override
+            public void onSuccess(SendMessage sendMessage) {
+                Gson gson = new Gson();
+                String sendMessageInfo = gson.toJson(sendMessage);
+                callbackContext.success(sendMessageInfo);
+            }
+
+            @Override
+            public void onFailed(int code, SendMessage sendMessage) {
+                Gson gson = new Gson();
+                String sendMessageInfo = gson.toJson(sendMessage);
+                callbackContext.error(sendMessageInfo);
+            }
+        });
+    }
+
+    private void sendFileMessage(String recvID, int chatType,String filePath,String extParam, int fileType, CallbackContext callbackContext){
+        YIMClient.getInstance().sendFile(recvID, chatType, filePath, extParam, fileType, new YIMEventCallback.ResultCallback<SendMessage>(){
 
             @Override
             public void onSuccess(SendMessage sendMessage) {
@@ -380,7 +413,7 @@ public class YoumeIMCordovaPlugin extends CordovaPlugin implements YIMEventCallb
                                 audioMsg.audioText = sdkMsg.getText();
                                 audioMsg.audioTime = sdkMsg.getAudioTime();
                                 String jsonResult = new Gson().toJson(audioMsg);
-                                Log.d(TAG,"recv txt msg: " + jsonResult);
+                                Log.d(TAG,"recv audio msg: " + jsonResult);
 
                                 PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, jsonResult);
                                 pluginResult.setKeepCallback(true);
@@ -392,6 +425,42 @@ public class YoumeIMCordovaPlugin extends CordovaPlugin implements YIMEventCallb
                         }
                     }
             );
+        }else if(YIMConstInfo.MessageBodyType.File == msgType){
+            long mRecvMsgId = message.getMessageID();
+            YIMMessageBodyFile sdkMsg = (YIMMessageBodyFile) message.getMessageBody();
+            String fileExtension = sdkMsg.getFileExtension();
+            String originalFileName = sdkMsg.getFileName();
+            YIMClient.getInstance().downloadFile(mRecvMsgId,getDiskCachePath(this.cordova.getContext())+"/"+mRecvMsgId+"."+fileExtension,new YIMEventCallback.DownloadFileCallback(){
+
+                @Override
+                public void onDownload(int errorcode, YIMMessage yimMessage, String savePath) {
+                    if(errorcode == 0) {
+                        im.youme.cordovaim.FileMessage fileMsg = new im.youme.cordovaim.FileMessage();
+                        fileMsg.createTime = message.getCreateTime();
+                        fileMsg.isRead = message.getIsRead();
+                        fileMsg.chatType = message.getChatType();
+                        fileMsg.receiveId = message.getReceiveID();
+                        fileMsg.senderId = message.getSenderID();
+                        fileMsg.msgId = message.getMessageID();
+                        fileMsg.msgType = message.getMessageType();
+
+                        fileMsg.attachParam = sdkMsg.getExtParam();
+                        fileMsg.filePath = savePath;
+                        fileMsg.fileExtension = sdkMsg.getFileExtension();
+                        fileMsg.fileType = sdkMsg.getFileType();
+                        fileMsg.fileSize = sdkMsg.getFileSize();
+                        fileMsg.fileName = sdkMsg.getFileName();
+                        String jsonResult = new Gson().toJson(fileMsg);
+                        Log.d(TAG,"recv fileMsg msg: " + jsonResult);
+
+                        PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, jsonResult);
+                        pluginResult.setKeepCallback(true);
+                        if(YoumeIMCordovaPlugin.this.msgEventCallback != null) YoumeIMCordovaPlugin.this.msgEventCallback.sendPluginResult(pluginResult);
+                    }else{
+                        Log.e(TAG,"download msg:"+ mRecvMsgId+" name:"+originalFileName+ " failed");
+                    }
+                }
+            } );
         }
 
 
