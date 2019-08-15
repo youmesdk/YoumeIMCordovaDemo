@@ -9,8 +9,8 @@
   },
   "im.youme.cordovaim": {
     "source": {
-      "type": "registry",
-      "id": "cordova-plugin-youme-im"
+      "type": "local",
+      "path": "/Volumes/Data/Project/git/YoumeIMCordovaDemo/node_modules/cordova-plugin-youme-im"
     },
     "is_top_level": true,
     "variables": {}

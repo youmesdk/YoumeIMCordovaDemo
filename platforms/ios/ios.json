@@ -1,0 +1,43 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"YoumeIMCordovaPlugin\"><param name=\"ios-package\" value=\"YoumeIMCordovaPlugin\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "im.youme.cordovaim": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "im.youme.cordovaim.YoumeIMCordovaPlugin",
+      "file": "plugins/im.youme.cordovaim/www/YoumeIMCordovaPlugin.js",
+      "pluginId": "im.youme.cordovaim",
+      "clobbers": [
+        "cordova.plugins.YoumeIMCordovaPlugin"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-whitelist": "1.3.4",
+    "im.youme.cordovaim": "1.0.0"
+  }
+}

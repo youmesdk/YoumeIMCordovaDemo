@@ -14,7 +14,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "cordova-android": "^8.0.0",
-    "cordova-plugin-youme-im": "0.0.2",
+    "cordova-ios": "^5.0.1",
+    "cordova-plugin-youme-im": "file:../YoumeIMCordovaPlugin",
     "im.youme.imcordovaplugin": "file:../YoumeIMCordovaPlugin"
   },
   "devDependencies": {
@@ -26,7 +27,8 @@
       "im.youme.cordovaim": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

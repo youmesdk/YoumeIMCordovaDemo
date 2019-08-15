@@ -1,35 +1,13 @@
 {
-  "_from": "cordova-plugin-youme-im",
-  "_id": "cordova-plugin-youme-im@0.0.2",
-  "_inBundle": false,
-  "_integrity": "sha512-4l23RNgQpHHK3PvWc/X8oV1nBupy4bAAAI2ApPjdK0JSL9812ZCLdZLFxttiaVhMSZfIErzVWvbsmtswjHaclA==",
-  "_location": "/cordova-plugin-youme-im",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "cordova-plugin-youme-im",
-    "name": "cordova-plugin-youme-im",
-    "escapedName": "cordova-plugin-youme-im",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
+  "name": "cordova-plugin-youme-im",
+  "version": "0.0.6",
+  "description": "Youme IM for Apache Cordova",
+  "main": "index.js",
+  "scripts": {
+    "pub": "npm publish",
+    "update": "npm version patch && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-youme-im/-/cordova-plugin-youme-im-0.0.2.tgz",
-  "_shasum": "6a2c99db6fa0b25eb77f712ef95babb8be8fb6d0",
-  "_spec": "cordova-plugin-youme-im",
-  "_where": "/Volumes/Data/Project/git/YoumeIMCordovaDemo",
-  "author": {
-    "name": "youme.im"
-  },
-  "bugs": {
-    "url": "https://github.com/youmesdk/YoumeIMCordovaPlugin/issues"
-  },
-  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-youme-im",
     "platforms": [
@@ -37,9 +15,10 @@
       "ios"
     ]
   },
-  "deprecated": false,
-  "description": "Youme IM for Apache Cordova",
-  "homepage": "https://github.com/youmesdk/YoumeIMCordovaPlugin#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youmesdk/YoumeIMCordovaPlugin"
+  },
   "keywords": [
     "ecosystem:cordova",
     "cordova-android",
@@ -48,17 +27,6 @@
     "instant message",
     "cordova chat"
   ],
-  "license": "BSD",
-  "main": "index.js",
-  "name": "cordova-plugin-youme-im",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/youmesdk/YoumeIMCordovaPlugin.git"
-  },
-  "scripts": {
-    "pub": "npm publish",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "update": "npm version patch && npm publish"
-  },
-  "version": "0.0.2"
+  "author": "youme.im",
+  "license": "BSD"
 }
